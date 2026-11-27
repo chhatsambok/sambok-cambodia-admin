@@ -1705,49 +1705,762 @@
     }
 
     const INITIAL_VILLAGES = [
-      { id: 1, village: "ភូមិអូរញរ", commune: "ឃុំតាពូង", district: "ស្រុកថ្មគោល", province: "បាត់ដំបង", families: 620, population: 2680 },
-      { id: 2, village: "ភូមិល្បើក", commune: "ឃុំតាពូង", district: "ស្រុកថ្មគោល", province: "បាត់ដំបង", families: 540, population: 2310 },
-      { id: 3, village: "ភូមិសាលាបន្ទាយ", commune: "ឃុំតាពូង", district: "ស្រុកថ្មគោល", province: "បាត់ដំបង", families: 495, population: 2120 },
-      { id: 4, village: "ភូមិចំការដូង", commune: "សង្កាត់ដង្កោ", district: "ខណ្ឌដង្កោ", province: "ភ្នំពេញ", families: 810, population: 3540 },
-      { id: 5, village: "ភូមិទួលគោក", commune: "សង្កាត់បឹងកក់១", district: "ខណ្ឌទួលគោក", province: "ភ្នំពេញ", families: 730, population: 3120 },
-      { id: 6, village: "ភូមិក្រវ៉ាន់", commune: "សង្កាត់នគរធំ", district: "ក្រុងសៀមរាប", province: "សៀមរាប", families: 580, population: 2490 },
-      { id: 7, village: "ភូមិក្បាលស្ពាន", commune: "សង្កាត់ប៉ោយប៉ែត", district: "ក្រុងប៉ោយប៉ែត", province: "បន្ទាយមានជ័យ", families: 920, population: 3980 },
-      { id: 8, village: "ភូមិតាខ្មៅ", commune: "សង្កាត់តាខ្មៅ", district: "ក្រុងតាខ្មៅ", province: "កណ្តាល", families: 660, population: 2840 },
-      { id: 9, village: "ភូមិសួង", commune: "សង្កាត់សួង", district: "ក្រុងសួង", province: "ត្បូងឃ្មុំ", families: 515, population: 2210 },
-      { id: 10, village: "ភូមិកំពង់បាយ", commune: "សង្កាត់កំពង់បាយ", district: "ក្រុងកំពត", province: "កំពត", families: 470, population: 1990 },
-      { id: 11, village: "ភូមិវាលស្បូវ", commune: "សង្កាត់វាលស្បូវ", district: "ខណ្ឌច្បារអំពៅ", province: "ភ្នំពេញ", families: 685, population: 2945 },
-      { id: 12, village: "ភូមិព្រែកលៀប", commune: "សង្កាត់ព្រែកលៀប", district: "ខណ្ឌជ្រោយចង្វារ", province: "ភ្នំពេញ", families: 590, population: 2530 },
-      { id: 13, village: "ភូមិកំពង់ចាម", commune: "សង្កាត់កំពង់ចាម", district: "ក្រុងកំពង់ចាម", province: "កំពង់ចាម", families: 530, population: 2270 },
-      { id: 14, village: "ភូមិស្ទឹងសែន", commune: "សង្កាត់កំពង់ធំ", district: "ក្រុងស្ទឹងសែន", province: "កំពង់ធំ", families: 480, population: 2060 },
-      { id: 15, village: "ភូមិដូនកែវ", commune: "សង្កាត់រកាក្នុង", district: "ក្រុងដូនកែវ", province: "តាកែវ", families: 560, population: 2410 },
-      { id: 16, village: "ភូមិច្បារមន", commune: "សង្កាត់ច្បារមន", district: "ក្រុងច្បារមន", province: "កំពង់ស្ពឺ", families: 510, population: 2190 },
-      { id: 17, village: "ភូមិព្រៃវែង", commune: "សង្កាត់កំពង់លាវ", district: "ក្រុងព្រៃវែង", province: "ព្រៃវែង", families: 490, population: 2110 },
-      { id: 18, village: "ភូមិស្វាយរៀង", commune: "សង្កាត់ស្វាយរៀង", district: "ក្រុងស្វាយរៀង", province: "ស្វាយរៀង", families: 465, population: 1995 },
-      { id: 19, village: "ភូមិពោធិ៍សាត់", commune: "សង្កាត់ផ្ទះព្រៃ", district: "ក្រុងពោធិ៍សាត់", province: "ពោធិ៍សាត់", families: 525, population: 2260 },
-      { id: 20, village: "ភូមិប៉ៃលិន", commune: "សង្កាត់ប៉ៃលិន", district: "ក្រុងប៉ៃលិន", province: "ប៉ៃលិន", families: 430, population: 1850 },
-      { id: 21, village: "ភូមិកែប", commune: "សង្កាត់កែប", district: "ក្រុងកែប", province: "កែប", families: 380, population: 1630 },
-      { id: 22, village: "ភូមិមិត្តភាព", commune: "សង្កាត់លេខ៤", district: "ក្រុងព្រះសីហនុ", province: "ព្រះសីហនុ", families: 740, population: 3180 },
-      { id: 23, village: "ភូមិខេមរភូមិន្ទ", commune: "សង្កាត់ស្មាច់មានជ័យ", district: "ក្រុងខេមរភូមិន្ទ", province: "កោះកុង", families: 410, population: 1760 },
-      { id: 24, village: "ភូមិបានលុង", commune: "សង្កាត់ឡាបានសៀក", district: "ក្រុងបានលុង", province: "រតនគិរី", families: 445, population: 1910 },
-      { id: 25, village: "ភូមិសែនមនោរម្យ", commune: "សង្កាត់ស្ពានមានជ័យ", district: "ក្រុងសែនមនោរម្យ", province: "មណ្ឌលគិរី", families: 360, population: 1550 }
-    ];
+  {
+    "id": 1,
+    "village": "ភូមិកណ្តាល (បន្ទាយមានជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ សិរីសោភ័ណ",
+    "district": "ក្រុងសិរីសោភ័ណ",
+    "province": "បន្ទាយមានជ័យ",
+    "families": 540,
+    "population": 2321
+  },
+  {
+    "id": 2,
+    "village": "ភូមិថ្មី (ម៉ាឡៃ)",
+    "commune": "ឃុំ/សង្កាត់ ម៉ាឡៃ",
+    "district": "ក្រុងប៉ោយប៉ែត",
+    "province": "បន្ទាយមានជ័យ",
+    "families": 453,
+    "population": 1949
+  },
+  {
+    "id": 3,
+    "village": "ភូមិកណ្តាល (បាត់ដំបង)",
+    "commune": "ឃុំ/សង្កាត់ បាត់ដំបង",
+    "district": "ក្រុងបាត់ដំបង",
+    "province": "បាត់ដំបង",
+    "families": 689,
+    "population": 2962
+  },
+  {
+    "id": 4,
+    "village": "ភូមិថ្មី (រុក្ខគីរី)",
+    "commune": "ឃុំ/សង្កាត់ រុក្ខគីរី",
+    "district": "ក្រុងមោងឫស្សី",
+    "province": "បាត់ដំបង",
+    "families": 579,
+    "population": 2488
+  },
+  {
+    "id": 5,
+    "village": "ភូមិកណ្តាល (កំពង់ចាម)",
+    "commune": "ឃុំ/សង្កាត់ កំពង់ចាម",
+    "district": "ក្រុងកំពង់ចាម",
+    "province": "កំពង់ចាម",
+    "families": 607,
+    "population": 2612
+  },
+  {
+    "id": 6,
+    "village": "ភូមិថ្មី (ស្ទឹងត្រង់)",
+    "commune": "ឃុំ/សង្កាត់ ស្ទឹងត្រង់",
+    "district": "ស្រុកបាធាយ",
+    "province": "កំពង់ចាម",
+    "families": 510,
+    "population": 2194
+  },
+  {
+    "id": 7,
+    "village": "ភូមិកណ្តាល (កំពង់ឆ្នាំង)",
+    "commune": "ឃុំ/សង្កាត់ កំពង់ឆ្នាំង",
+    "district": "ក្រុងកំពង់ឆ្នាំង",
+    "province": "កំពង់ឆ្នាំង",
+    "families": 359,
+    "population": 1545
+  },
+  {
+    "id": 8,
+    "village": "ភូមិថ្មី (ទឹកផុស)",
+    "commune": "ឃុំ/សង្កាត់ ទឹកផុស",
+    "district": "ស្រុកបរិបូណ៌",
+    "province": "កំពង់ឆ្នាំង",
+    "families": 302,
+    "population": 1297
+  },
+  {
+    "id": 9,
+    "village": "ភូមិកណ្តាល (កំពង់ស្ពឺ)",
+    "commune": "ឃុំ/សង្កាត់ ច្បារមន",
+    "district": "ក្រុងច្បារមន",
+    "province": "កំពង់ស្ពឺ",
+    "families": 594,
+    "population": 2555
+  },
+  {
+    "id": 10,
+    "village": "ភូមិថ្មី (សាមគ្គីមុនីជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ សាមគ្គីមុនីជ័យ",
+    "district": "ក្រុងឧដុង្គម៉ែជ័យ",
+    "province": "កំពង់ស្ពឺ",
+    "families": 499,
+    "population": 2146
+  },
+  {
+    "id": 11,
+    "village": "ភូមិកណ្តាល (កំពង់ធំ)",
+    "commune": "ឃុំ/សង្កាត់ ស្ទឹងសែន",
+    "district": "ក្រុងស្ទឹងសែន",
+    "province": "កំពង់ធំ",
+    "families": 441,
+    "population": 1895
+  },
+  {
+    "id": 12,
+    "village": "ភូមិថ្មី (តាំងគោក)",
+    "commune": "ឃុំ/សង្កាត់ តាំងគោក",
+    "district": "ស្រុកបារាយណ៍",
+    "province": "កំពង់ធំ",
+    "families": 370,
+    "population": 1591
+  },
+  {
+    "id": 13,
+    "village": "ភូមិកណ្តាល (កំពត)",
+    "commune": "ឃុំ/សង្កាត់ កំពត",
+    "district": "ក្រុងកំពត",
+    "province": "កំពត",
+    "families": 395,
+    "population": 1697
+  },
+  {
+    "id": 14,
+    "village": "ភូមិថ្មី (ទឹកឈូ)",
+    "commune": "ឃុំ/សង្កាត់ ទឹកឈូ",
+    "district": "ក្រុងបូកគោ",
+    "province": "កំពត",
+    "families": 331,
+    "population": 1425
+  },
+  {
+    "id": 15,
+    "village": "ភូមិកណ្តាល (កណ្តាល)",
+    "commune": "ឃុំ/សង្កាត់ តាខ្មៅ",
+    "district": "ក្រុងតាខ្មៅ",
+    "province": "កណ្តាល",
+    "families": 852,
+    "population": 3662
+  },
+  {
+    "id": 16,
+    "village": "ភូមិថ្មី (អង្គស្នួល)",
+    "commune": "ឃុំ/សង្កាត់ អង្គស្នួល",
+    "district": "ក្រុងសំពៅពូន",
+    "province": "កណ្តាល",
+    "families": 715,
+    "population": 3076
+  },
+  {
+    "id": 17,
+    "village": "ភូមិកណ្តាល (កោះកុង)",
+    "commune": "ឃុំ/សង្កាត់ ខេមរភូមិន្ទ",
+    "district": "ក្រុងខេមរភូមិន្ទ",
+    "province": "កោះកុង",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 18,
+    "village": "ភូមិថ្មី (ថ្មបាំង)",
+    "commune": "ឃុំ/សង្កាត់ ថ្មបាំង",
+    "district": "ស្រុកប៉ុតុមសាគរ",
+    "province": "កោះកុង",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 19,
+    "village": "ភូមិកណ្តាល (ក្រចេះ)",
+    "commune": "ឃុំ/សង្កាត់ ក្រចេះ",
+    "district": "ក្រុងក្រចេះ",
+    "province": "ក្រចេះ",
+    "families": 251,
+    "population": 1080
+  },
+  {
+    "id": 20,
+    "village": "ភូមិថ្មី (ស្នួល)",
+    "commune": "ឃុំ/សង្កាត់ ស្នួល",
+    "district": "ស្រុកឆ្លូង",
+    "province": "ក្រចេះ",
+    "families": 211,
+    "population": 907
+  },
+  {
+    "id": 21,
+    "village": "ភូមិកណ្តាល (មណ្ឌលគិរី)",
+    "commune": "ឃុំ/សង្កាត់ សែនមនោរម្យ",
+    "district": "ក្រុងសែនមនោរម្យ",
+    "province": "មណ្ឌលគិរី",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 22,
+    "village": "ភូមិថ្មី (ពេជ្រាដា)",
+    "commune": "ឃុំ/សង្កាត់ ពេជ្រាដា",
+    "district": "ស្រុកកែវសីមា",
+    "province": "មណ្ឌលគិរី",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 23,
+    "village": "ភូមិកណ្តាល (ភ្នំពេញ)",
+    "commune": "ឃុំ/សង្កាត់ ចំការមន",
+    "district": "ខណ្ឌចំការមន",
+    "province": "ភ្នំពេញ",
+    "families": 1442,
+    "population": 6200
+  },
+  {
+    "id": 24,
+    "village": "ភូមិថ្មី (កំបូល)",
+    "commune": "ឃុំ/សង្កាត់ កំបូល",
+    "district": "ខណ្ឌដូនពេញ",
+    "province": "ភ្នំពេញ",
+    "families": 1211,
+    "population": 5208
+  },
+  {
+    "id": 25,
+    "village": "ភូមិកណ្តាល (ព្រះវិហារ)",
+    "commune": "ឃុំ/សង្កាត់ ព្រះវិហារ",
+    "district": "ក្រុងព្រះវិហារ",
+    "province": "ព្រះវិហារ",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 26,
+    "village": "ភូមិថ្មី (ត្បែងមានជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ ត្បែងមានជ័យ",
+    "district": "ស្រុកជ័យសែន",
+    "province": "ព្រះវិហារ",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 27,
+    "village": "ភូមិកណ្តាល (ព្រៃវែង)",
+    "commune": "ឃុំ/សង្កាត់ ព្រៃវែង",
+    "district": "ក្រុងព្រៃវែង",
+    "province": "ព្រៃវែង",
+    "families": 708,
+    "population": 3045
+  },
+  {
+    "id": 28,
+    "village": "ភូមិថ្មី (ពោធិ៍រៀង)",
+    "commune": "ឃុំ/សង្កាត់ ពោធិ៍រៀង",
+    "district": "ស្រុកបាភ្នំ",
+    "province": "ព្រៃវែង",
+    "families": 595,
+    "population": 2557
+  },
+  {
+    "id": 29,
+    "village": "ភូមិកណ្តាល (ពោធិ៍សាត់)",
+    "commune": "ឃុំ/សង្កាត់ ពោធិ៍សាត់",
+    "district": "ក្រុងពោធិ៍សាត់",
+    "province": "ពោធិ៍សាត់",
+    "families": 305,
+    "population": 1310
+  },
+  {
+    "id": 30,
+    "village": "ភូមិថ្មី (តាលោសែនជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ តាលោសែនជ័យ",
+    "district": "ស្រុកបាកាន",
+    "province": "ពោធិ៍សាត់",
+    "families": 256,
+    "population": 1100
+  },
+  {
+    "id": 31,
+    "village": "ភូមិកណ្តាល (រតនគិរី)",
+    "commune": "ឃុំ/សង្កាត់ បានលុង",
+    "district": "ក្រុងបានលុង",
+    "province": "រតនគិរី",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 32,
+    "village": "ភូមិថ្មី (តាវែង)",
+    "commune": "ឃុំ/សង្កាត់ តាវែង",
+    "district": "ស្រុកអណ្តូងមាស",
+    "province": "រតនគិរី",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 33,
+    "village": "ភូមិកណ្តាល (សៀមរាប)",
+    "commune": "ឃុំ/សង្កាត់ សៀមរាប",
+    "district": "ក្រុងសៀមរាប",
+    "province": "សៀមរាប",
+    "families": 693,
+    "population": 2980
+  },
+  {
+    "id": 34,
+    "village": "ភូមិថ្មី (វ៉ារិន)",
+    "commune": "ឃុំ/សង្កាត់ វ៉ារិន",
+    "district": "ក្រុងរុនតាឯកតេជោសែន",
+    "province": "សៀមរាប",
+    "families": 582,
+    "population": 2503
+  },
+  {
+    "id": 35,
+    "village": "ភូមិកណ្តាល (ព្រះសីហនុ)",
+    "commune": "ឃុំ/សង្កាត់ ព្រះសីហនុ",
+    "district": "ក្រុងព្រះសីហនុ",
+    "province": "ព្រះសីហនុ",
+    "families": 214,
+    "population": 920
+  },
+  {
+    "id": 36,
+    "village": "ភូមិថ្មី (កែវផុស)",
+    "commune": "ឃុំ/សង្កាត់ កែវផុស",
+    "district": "ក្រុងកោះរ៉ុង",
+    "province": "ព្រះសីហនុ",
+    "families": 180,
+    "population": 772
+  },
+  {
+    "id": 37,
+    "village": "ភូមិកណ្តាល (ស្ទឹងត្រែង)",
+    "commune": "ឃុំ/សង្កាត់ ស្ទឹងត្រែង",
+    "district": "ក្រុងស្ទឹងត្រែង",
+    "province": "ស្ទឹងត្រែង",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 38,
+    "village": "ភូមិថ្មី (បុរីអូរស្វាយសែនជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ បុរីអូរស្វាយសែនជ័យ",
+    "district": "ស្រុកសេសាន",
+    "province": "ស្ទឹងត្រែង",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 39,
+    "village": "ភូមិកណ្តាល (ស្វាយរៀង)",
+    "commune": "ឃុំ/សង្កាត់ ស្វាយរៀង",
+    "district": "ក្រុងស្វាយរៀង",
+    "province": "ស្វាយរៀង",
+    "families": 356,
+    "population": 1530
+  },
+  {
+    "id": 40,
+    "village": "ភូមិថ្មី (ស្វាយរៀង)",
+    "commune": "ឃុំ/សង្កាត់ ស្វាយរៀង",
+    "district": "ក្រុងបាវិត",
+    "province": "ស្វាយរៀង",
+    "families": 299,
+    "population": 1285
+  },
+  {
+    "id": 41,
+    "village": "ភូមិកណ្តាល (តាកែវ)",
+    "commune": "ឃុំ/សង្កាត់ ដូនកែវ",
+    "district": "ក្រុងដូនកែវ",
+    "province": "តាកែវ",
+    "families": 590,
+    "population": 2537
+  },
+  {
+    "id": 42,
+    "village": "ភូមិថ្មី (ទ្រាំង)",
+    "commune": "ឃុំ/សង្កាត់ ទ្រាំង",
+    "district": "ស្រុកអង្គរបូរី",
+    "province": "តាកែវ",
+    "families": 496,
+    "population": 2131
+  },
+  {
+    "id": 43,
+    "village": "ភូមិកណ្តាល (ឧត្តរមានជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ សំរោង",
+    "district": "ក្រុងសំរោង",
+    "province": "ឧត្តរមានជ័យ",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 44,
+    "village": "ភូមិថ្មី (ត្រពាំងប្រាសាទ)",
+    "commune": "ឃុំ/សង្កាត់ ត្រពាំងប្រាសាទ",
+    "district": "ស្រុកអន្លង់វែង",
+    "province": "ឧត្តរមានជ័យ",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 45,
+    "village": "ភូមិកណ្តាល (កែប)",
+    "commune": "ឃុំ/សង្កាត់ កែប",
+    "district": "ក្រុងកែប",
+    "province": "កែប",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 46,
+    "village": "ភូមិថ្មី (ដំណាក់ចង្អើរ)",
+    "commune": "ឃុំ/សង្កាត់ ដំណាក់ចង្អើរ",
+    "district": "ស្រុកដំណាក់ចង្អើរ",
+    "province": "កែប",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 47,
+    "village": "ភូមិកណ្តាល (ប៉ៃលិន)",
+    "commune": "ឃុំ/សង្កាត់ ប៉ៃលិន",
+    "district": "ក្រុងប៉ៃលិន",
+    "province": "ប៉ៃលិន",
+    "families": 186,
+    "population": 800
+  },
+  {
+    "id": 48,
+    "village": "ភូមិថ្មី (សាលាក្រៅ)",
+    "commune": "ឃុំ/សង្កាត់ សាលាក្រៅ",
+    "district": "ស្រុកសាលាក្រៅ",
+    "province": "ប៉ៃលិន",
+    "families": 163,
+    "population": 700
+  },
+  {
+    "id": 49,
+    "village": "ភូមិកណ្តាល (ត្បូងឃ្មុំ)",
+    "commune": "ឃុំ/សង្កាត់ សួង",
+    "district": "ក្រុងសួង",
+    "province": "ត្បូងឃ្មុំ",
+    "families": 530,
+    "population": 2280
+  },
+  {
+    "id": 50,
+    "village": "ភូមិថ្មី (ត្បូងឃ្មុំ)",
+    "commune": "ឃុំ/សង្កាត់ ត្បូងឃ្មុំ",
+    "district": "ស្រុកតំបែរ",
+    "province": "ត្បូងឃ្មុំ",
+    "families": 445,
+    "population": 1915
+  }
+];
 
     const INITIAL_CITIZENS = [
-      { id: 1, idCard: "0202199200145", name: "ឆាត សំបុក", gender: "ប្រុស", age: 34, village: "ភូមិអូរញរ", commune: "ឃុំតាពូង", district: "ស្រុកថ្មគោល", province: "បាត់ដំបង", role: "មេគ្រួសារ • វិស្វករ IT" },
-      { id: 2, idCard: "0202199400821", name: "សុខ ចាន់ធី", gender: "ស្រី", age: 32, village: "ភូមិល្បើក", commune: "ឃុំតាពូង", district: "ស្រុកថ្មគោល", province: "បាត់ដំបង", role: "សមាជិកគ្រួសារ • គ្រូបង្រៀន" },
-      { id: 3, idCard: "1201198801923", name: "ជា វណ្ណា", gender: "ប្រុស", age: 38, village: "ភូមិទួលគោក", commune: "សង្កាត់បឹងកក់១", district: "ខណ្ឌទួលគោក", province: "ភ្នំពេញ", role: "មេគ្រួសារ • ពាណិជ្ជករ" },
-      { id: 4, idCard: "1712199600319", name: "ហេង ស្រីមុំ", gender: "ស្រី", age: 30, village: "ភូមិក្រវ៉ាន់", commune: "សង្កាត់នគរធំ", district: "ក្រុងសៀមរាប", province: "សៀមរាប", role: "មេគ្រួសារ • មគ្គុទ្ទេសក៍" },
-      { id: 5, idCard: "0103199000542", name: "លី មករា", gender: "ប្រុស", age: 36, village: "ភូមិក្បាលស្ពាន", commune: "សង្កាត់ប៉ោយប៉ែត", district: "ក្រុងប៉ោយប៉ែត", province: "បន្ទាយមានជ័យ", role: "មេគ្រួសារ • បុគ្គលិកក្រុមហ៊ុន" },
-      { id: 6, idCard: "0811199900774", name: "ផាន សុជាតា", gender: "ស្រី", age: 27, village: "ភូមិតាខ្មៅ", commune: "សង្កាត់តាខ្មៅ", district: "ក្រុងតាខ្មៅ", province: "កណ្តាល", role: "សមាជិកគ្រួសារ • គណនេយ្យករ" },
-      { id: 7, idCard: "0306198500412", name: "កែវ សុខា", gender: "ប្រុស", age: 41, village: "ភូមិកំពង់ចាម", commune: "សង្កាត់កំពង់ចាម", district: "ក្រុងកំពង់ចាម", province: "កំពង់ចាម", role: "មេគ្រួសារ • កសិករ" },
-      { id: 8, idCard: "2110199300638", name: "នួន ម៉ាលី", gender: "ស្រី", age: 33, village: "ភូមិដូនកែវ", commune: "សង្កាត់រកាក្នុង", district: "ក្រុងដូនកែវ", province: "តាកែវ", role: "មេគ្រួសារ • អាជីវករ" },
-      { id: 9, idCard: "1801199100915", name: "អ៊ុំ ពិសិដ្ឋ", gender: "ប្រុស", age: 35, village: "ភូមិមិត្តភាព", commune: "សង្កាត់លេខ៤", district: "ក្រុងព្រះសីហនុ", province: "ព្រះសីហនុ", role: "មេគ្រួសារ • វិស្វករ" },
-      { id: 10, idCard: "0708199700284", name: "ម៉ៅ ស្រីនាង", gender: "ស្រី", age: 29, village: "ភូមិកំពង់បាយ", commune: "សង្កាត់កំពង់បាយ", district: "ក្រុងកំពត", province: "កំពត", role: "សមាជិកគ្រួសារ • គ្រូពេទ្យ" },
-      { id: 11, idCard: "2507198900511", name: "វ៉ាន់ ធារ៉ា", gender: "ប្រុស", age: 37, village: "ភូមិសួង", commune: "សង្កាត់សួង", district: "ក្រុងសួង", province: "ត្បូងឃ្មុំ", role: "មេគ្រួសារ • ម្ចាស់ចម្ការ" },
-      { id: 12, idCard: "1413199500709", name: "ស៊ុន បុប្ផា", gender: "ស្រី", age: 31, village: "ភូមិព្រៃវែង", commune: "សង្កាត់កំពង់លាវ", district: "ក្រុងព្រៃវែង", province: "ព្រៃវែង", role: "សមាជិកគ្រួសារ • បុគ្គលិកធនាគារ" }
-    ];
+  {
+    "id": 1,
+    "idCard": "0101199010000",
+    "name": "ឆាត សំបុក",
+    "gender": "ប្រុស",
+    "age": 24,
+    "village": "ភូមិកណ្តាល (បន្ទាយមានជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ សិរីសោភ័ណ",
+    "district": "ក្រុងសិរីសោភ័ណ",
+    "province": "បន្ទាយមានជ័យ",
+    "role": "មេគ្រួសារ • វិស្វករ IT"
+  },
+  {
+    "id": 2,
+    "idCard": "0201199110137",
+    "name": "សុខ ចាន់ធី",
+    "gender": "ស្រី",
+    "age": 26,
+    "village": "ភូមិកណ្តាល (បាត់ដំបង)",
+    "commune": "ឃុំ/សង្កាត់ បាត់ដំបង",
+    "district": "ក្រុងបាត់ដំបង",
+    "province": "បាត់ដំបង",
+    "role": "សមាជិកគ្រួសារ • គ្រូបង្រៀន"
+  },
+  {
+    "id": 3,
+    "idCard": "0301199210274",
+    "name": "ជា វណ្ណា",
+    "gender": "ប្រុស",
+    "age": 28,
+    "village": "ភូមិកណ្តាល (កំពង់ចាម)",
+    "commune": "ឃុំ/សង្កាត់ កំពង់ចាម",
+    "district": "ក្រុងកំពង់ចាម",
+    "province": "កំពង់ចាម",
+    "role": "មេគ្រួសារ • ពាណិជ្ជករ"
+  },
+  {
+    "id": 4,
+    "idCard": "0401199310411",
+    "name": "ហេង ស្រីមុំ",
+    "gender": "ស្រី",
+    "age": 30,
+    "village": "ភូមិកណ្តាល (កំពង់ឆ្នាំង)",
+    "commune": "ឃុំ/សង្កាត់ កំពង់ឆ្នាំង",
+    "district": "ក្រុងកំពង់ឆ្នាំង",
+    "province": "កំពង់ឆ្នាំង",
+    "role": "មេគ្រួសារ • មគ្គុទ្ទេសក៍"
+  },
+  {
+    "id": 5,
+    "idCard": "0501199410548",
+    "name": "លី មករា",
+    "gender": "ប្រុស",
+    "age": 32,
+    "village": "ភូមិកណ្តាល (កំពង់ស្ពឺ)",
+    "commune": "ឃុំ/សង្កាត់ ច្បារមន",
+    "district": "ក្រុងច្បារមន",
+    "province": "កំពង់ស្ពឺ",
+    "role": "មេគ្រួសារ • បុគ្គលិកក្រុមហ៊ុន"
+  },
+  {
+    "id": 6,
+    "idCard": "0601199510685",
+    "name": "ផាន សុជាតា",
+    "gender": "ស្រី",
+    "age": 34,
+    "village": "ភូមិកណ្តាល (កំពង់ធំ)",
+    "commune": "ឃុំ/សង្កាត់ ស្ទឹងសែន",
+    "district": "ក្រុងស្ទឹងសែន",
+    "province": "កំពង់ធំ",
+    "role": "សមាជិកគ្រួសារ • គណនេយ្យករ"
+  },
+  {
+    "id": 7,
+    "idCard": "0701199610822",
+    "name": "កែវ សុខា",
+    "gender": "ប្រុស",
+    "age": 36,
+    "village": "ភូមិកណ្តាល (កំពត)",
+    "commune": "ឃុំ/សង្កាត់ កំពត",
+    "district": "ក្រុងកំពត",
+    "province": "កំពត",
+    "role": "មេគ្រួសារ • កសិករ"
+  },
+  {
+    "id": 8,
+    "idCard": "0801199710959",
+    "name": "នួន ម៉ាលី",
+    "gender": "ស្រី",
+    "age": 38,
+    "village": "ភូមិកណ្តាល (កណ្តាល)",
+    "commune": "ឃុំ/សង្កាត់ តាខ្មៅ",
+    "district": "ក្រុងតាខ្មៅ",
+    "province": "កណ្តាល",
+    "role": "មេគ្រួសារ • អាជីវករ"
+  },
+  {
+    "id": 9,
+    "idCard": "0901199811096",
+    "name": "អ៊ុំ ពិសិដ្ឋ",
+    "gender": "ប្រុស",
+    "age": 40,
+    "village": "ភូមិកណ្តាល (កោះកុង)",
+    "commune": "ឃុំ/សង្កាត់ ខេមរភូមិន្ទ",
+    "district": "ក្រុងខេមរភូមិន្ទ",
+    "province": "កោះកុង",
+    "role": "មេគ្រួសារ • វិស្វករ"
+  },
+  {
+    "id": 10,
+    "idCard": "1001199911233",
+    "name": "ម៉ៅ ស្រីនាង",
+    "gender": "ស្រី",
+    "age": 42,
+    "village": "ភូមិកណ្តាល (ក្រចេះ)",
+    "commune": "ឃុំ/សង្កាត់ ក្រចេះ",
+    "district": "ក្រុងក្រចេះ",
+    "province": "ក្រចេះ",
+    "role": "សមាជិកគ្រួសារ • គ្រូពេទ្យ"
+  },
+  {
+    "id": 11,
+    "idCard": "1101200011370",
+    "name": "វ៉ាន់ ធារ៉ា",
+    "gender": "ប្រុស",
+    "age": 44,
+    "village": "ភូមិកណ្តាល (មណ្ឌលគិរី)",
+    "commune": "ឃុំ/សង្កាត់ សែនមនោរម្យ",
+    "district": "ក្រុងសែនមនោរម្យ",
+    "province": "មណ្ឌលគិរី",
+    "role": "មេគ្រួសារ • ម្ចាស់ចម្ការ"
+  },
+  {
+    "id": 12,
+    "idCard": "1201200111507",
+    "name": "ស៊ុន បុប្ផា",
+    "gender": "ស្រី",
+    "age": 46,
+    "village": "ភូមិកណ្តាល (ភ្នំពេញ)",
+    "commune": "ឃុំ/សង្កាត់ ចំការមន",
+    "district": "ខណ្ឌចំការមន",
+    "province": "ភ្នំពេញ",
+    "role": "សមាជិកគ្រួសារ • បុគ្គលិកធនាគារ"
+  },
+  {
+    "id": 13,
+    "idCard": "1301199011644",
+    "name": "សៅ រតនា",
+    "gender": "ប្រុស",
+    "age": 24,
+    "village": "ភូមិកណ្តាល (ព្រះវិហារ)",
+    "commune": "ឃុំ/សង្កាត់ ព្រះវិហារ",
+    "district": "ក្រុងព្រះវិហារ",
+    "province": "ព្រះវិហារ",
+    "role": "មេគ្រួសារ • វិស្វករ IT"
+  },
+  {
+    "id": 14,
+    "idCard": "1401199111781",
+    "name": "តាំង ចន្ទ្រា",
+    "gender": "ស្រី",
+    "age": 26,
+    "village": "ភូមិកណ្តាល (ព្រៃវែង)",
+    "commune": "ឃុំ/សង្កាត់ ព្រៃវែង",
+    "district": "ក្រុងព្រៃវែង",
+    "province": "ព្រៃវែង",
+    "role": "សមាជិកគ្រួសារ • គ្រូបង្រៀន"
+  },
+  {
+    "id": 15,
+    "idCard": "1501199211918",
+    "name": "ពេជ្រ វិបុល",
+    "gender": "ប្រុស",
+    "age": 28,
+    "village": "ភូមិកណ្តាល (ពោធិ៍សាត់)",
+    "commune": "ឃុំ/សង្កាត់ ពោធិ៍សាត់",
+    "district": "ក្រុងពោធិ៍សាត់",
+    "province": "ពោធិ៍សាត់",
+    "role": "មេគ្រួសារ • ពាណិជ្ជករ"
+  },
+  {
+    "id": 16,
+    "idCard": "1601199312055",
+    "name": "ឡុង មរកត",
+    "gender": "ស្រី",
+    "age": 30,
+    "village": "ភូមិកណ្តាល (រតនគិរី)",
+    "commune": "ឃុំ/សង្កាត់ បានលុង",
+    "district": "ក្រុងបានលុង",
+    "province": "រតនគិរី",
+    "role": "មេគ្រួសារ • មគ្គុទ្ទេសក៍"
+  },
+  {
+    "id": 17,
+    "idCard": "1701199412192",
+    "name": "ឃុន តារា",
+    "gender": "ប្រុស",
+    "age": 32,
+    "village": "ភូមិកណ្តាល (សៀមរាប)",
+    "commune": "ឃុំ/សង្កាត់ សៀមរាប",
+    "district": "ក្រុងសៀមរាប",
+    "province": "សៀមរាប",
+    "role": "មេគ្រួសារ • បុគ្គលិកក្រុមហ៊ុន"
+  },
+  {
+    "id": 18,
+    "idCard": "1801199512329",
+    "name": "ជួប សុវណ្ណី",
+    "gender": "ស្រី",
+    "age": 34,
+    "village": "ភូមិកណ្តាល (ព្រះសីហនុ)",
+    "commune": "ឃុំ/សង្កាត់ ព្រះសីហនុ",
+    "district": "ក្រុងព្រះសីហនុ",
+    "province": "ព្រះសីហនុ",
+    "role": "សមាជិកគ្រួសារ • គណនេយ្យករ"
+  },
+  {
+    "id": 19,
+    "idCard": "1901199612466",
+    "name": "ទឹម សុភា",
+    "gender": "ប្រុស",
+    "age": 36,
+    "village": "ភូមិកណ្តាល (ស្ទឹងត្រែង)",
+    "commune": "ឃុំ/សង្កាត់ ស្ទឹងត្រែង",
+    "district": "ក្រុងស្ទឹងត្រែង",
+    "province": "ស្ទឹងត្រែង",
+    "role": "មេគ្រួសារ • កសិករ"
+  },
+  {
+    "id": 20,
+    "idCard": "2001199712603",
+    "name": "រស់ ធីតា",
+    "gender": "ស្រី",
+    "age": 38,
+    "village": "ភូមិកណ្តាល (ស្វាយរៀង)",
+    "commune": "ឃុំ/សង្កាត់ ស្វាយរៀង",
+    "district": "ក្រុងស្វាយរៀង",
+    "province": "ស្វាយរៀង",
+    "role": "មេគ្រួសារ • អាជីវករ"
+  },
+  {
+    "id": 21,
+    "idCard": "2101199812740",
+    "name": "យឹម បញ្ញា",
+    "gender": "ប្រុស",
+    "age": 40,
+    "village": "ភូមិកណ្តាល (តាកែវ)",
+    "commune": "ឃុំ/សង្កាត់ ដូនកែវ",
+    "district": "ក្រុងដូនកែវ",
+    "province": "តាកែវ",
+    "role": "មេគ្រួសារ • វិស្វករ"
+  },
+  {
+    "id": 22,
+    "idCard": "2201199912877",
+    "name": "គង់ ស្រីពេជ្រ",
+    "gender": "ស្រី",
+    "age": 42,
+    "village": "ភូមិកណ្តាល (ឧត្តរមានជ័យ)",
+    "commune": "ឃុំ/សង្កាត់ សំរោង",
+    "district": "ក្រុងសំរោង",
+    "province": "ឧត្តរមានជ័យ",
+    "role": "សមាជិកគ្រួសារ • គ្រូពេទ្យ"
+  },
+  {
+    "id": 23,
+    "idCard": "2301200013014",
+    "name": "នង សំណាង",
+    "gender": "ប្រុស",
+    "age": 44,
+    "village": "ភូមិកណ្តាល (កែប)",
+    "commune": "ឃុំ/សង្កាត់ កែប",
+    "district": "ក្រុងកែប",
+    "province": "កែប",
+    "role": "មេគ្រួសារ • ម្ចាស់ចម្ការ"
+  },
+  {
+    "id": 24,
+    "idCard": "2401200113151",
+    "name": "អឹុង លក្ខិណា",
+    "gender": "ស្រី",
+    "age": 46,
+    "village": "ភូមិកណ្តាល (ប៉ៃលិន)",
+    "commune": "ឃុំ/សង្កាត់ ប៉ៃលិន",
+    "district": "ក្រុងប៉ៃលិន",
+    "province": "ប៉ៃលិន",
+    "role": "សមាជិកគ្រួសារ • បុគ្គលិកធនាគារ"
+  },
+  {
+    "id": 25,
+    "idCard": "2501199013288",
+    "name": "ហួត ឧត្តម",
+    "gender": "ប្រុស",
+    "age": 24,
+    "village": "ភូមិកណ្តាល (ត្បូងឃ្មុំ)",
+    "commune": "ឃុំ/សង្កាត់ សួង",
+    "district": "ក្រុងសួង",
+    "province": "ត្បូងឃ្មុំ",
+    "role": "មេគ្រួសារ • វិស្វករ IT"
+  }
+];
 
-    const STORAGE_KEY = "sambok_cambodia_admin_v2";
+    const STORAGE_KEY = "sambok_cambodia_admin_v2_2";
 
     let state = {
       lang: "km",
