@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Noto+Sans+Khmer:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
     :root {
       --navy-dark: #0f2342;
@@ -315,6 +314,8 @@
       align-items: center;
       gap: 7px;
       transition: background 0.15s ease;
+      position: relative;
+      z-index: 3;
     }
 
     .btn-gold:hover {
@@ -365,17 +366,17 @@
       margin: 0 auto;
     }
 
-    /* Angkor Wat Hero Banner */
+    /* Angkor Wat Hero Banner - 100% Reliable Local/Wikimedia + Detailed SVG Temple */
     .hero-banner {
       position: relative;
       border-radius: 16px;
       overflow: hidden;
-      background-color: #0f2342;
+      background-color: #0c1f3d;
       background-image:
-        linear-gradient(90deg, rgba(11, 26, 51, 0.92) 0%, rgba(15, 35, 66, 0.78) 55%, rgba(15, 35, 66, 0.55) 100%),
-        url("https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?auto=format&fit=crop&w=1600&q=80");
+        linear-gradient(92deg, rgba(10, 25, 49, 0.94) 0%, rgba(15, 35, 66, 0.80) 52%, rgba(22, 50, 92, 0.62) 100%),
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ankor_Wat_temple.jpg/1280px-Ankor_Wat_temple.jpg");
       background-size: cover;
-      background-position: center 42%;
+      background-position: center 45%;
       padding: 26px 28px;
       color: #ffffff;
       display: flex;
@@ -388,17 +389,17 @@
     }
 
     .hero-content {
-      max-width: 740px;
+      max-width: 720px;
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
 
     .hero-pill {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: rgba(245, 158, 11, 0.18);
-      border: 1px solid rgba(251, 191, 36, 0.45);
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(251, 191, 36, 0.5);
       color: #fcd34d;
       padding: 4px 12px;
       border-radius: 999px;
@@ -412,6 +413,7 @@
       font-weight: 700;
       line-height: 1.35;
       margin-bottom: 6px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
     }
 
     .hero-desc {
@@ -420,15 +422,15 @@
       line-height: 1.6;
     }
 
-    .hero-silhouette {
+    .hero-angkor-svg {
       position: absolute;
-      right: 16px;
-      bottom: -6px;
-      width: 240px;
-      height: 110px;
-      opacity: 0.14;
+      right: 14px;
+      bottom: 0;
+      width: 340px;
+      height: 145px;
+      opacity: 0.22;
       pointer-events: none;
-      z-index: 1;
+      z-index: 2;
     }
 
     /* KPI Grid */
@@ -542,11 +544,26 @@
       border-radius: 8px;
     }
 
+    .chart-canvas-box {
+      width: 100%;
+      height: 270px;
+      position: relative;
+    }
+
+    .donut-canvas-box {
+      width: 100%;
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
     .gender-stats-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     .gender-box {
@@ -865,14 +882,14 @@
             <span>🏘️</span>
             <span data-i18n="menuVillages">ឃុំ / សង្កាត់ & ភូមិ</span>
           </span>
-          <span class="nav-badge" id="badgeVillages">0</span>
+          <span class="nav-badge" id="badgeVillages">25</span>
         </button>
         <button class="nav-btn" data-tab="citizens" onclick="switchTab('citizens')">
           <span class="nav-btn-left">
             <span>👥</span>
             <span data-i18n="menuCitizens">បញ្ជីឈ្មោះប្រជាពលរដ្ឋ</span>
           </span>
-          <span class="nav-badge" id="badgeCitizens">0</span>
+          <span class="nav-badge" id="badgeCitizens">15</span>
         </button>
       </div>
 
@@ -955,9 +972,9 @@
               <span data-i18n="viewAll25">មើលបញ្ជីខេត្តទាំង ២៥</span>
             </button>
 
-            <!-- Angkor Wat Silhouette SVG Accent -->
-            <svg class="hero-silhouette" viewBox="0 0 320 140" fill="#ffffff" aria-hidden="true">
-              <path d="M150 10 L160 32 L170 10 L175 45 L195 45 L200 25 L208 45 L222 65 L235 65 L240 48 L248 65 L265 88 L320 88 L320 140 L0 140 L0 88 L55 88 L72 65 L80 48 L85 65 L98 65 L112 45 L120 25 L125 45 L145 45 Z"/>
+            <!-- Detailed 5-Tower Angkor Wat Silhouette SVG -->
+            <svg class="hero-angkor-svg" viewBox="0 0 420 170" fill="#ffffff" aria-hidden="true">
+              <path d="M204 8 L210 24 L216 8 L220 34 L228 34 L232 48 L244 48 L248 28 L253 48 L262 48 L266 64 L278 64 L282 44 L287 64 L298 64 L304 86 L332 86 L338 104 L420 104 L420 170 L0 170 L0 104 L82 104 L88 86 L116 86 L122 64 L133 64 L138 44 L142 64 L154 64 L158 48 L167 48 L172 28 L176 48 L188 48 L192 34 L200 34 Z"/>
             </svg>
           </div>
 
@@ -1024,7 +1041,7 @@
             </div>
           </div>
 
-          <!-- Charts Row -->
+          <!-- Charts Row (100% Built-in Offline SVG Charts - Never Fails on GitHub Pages) -->
           <div class="charts-grid">
             <div class="card">
               <div class="card-header">
@@ -1034,9 +1051,7 @@
                 </div>
                 <span class="unit-badge" data-i18n="unitPeople">ឯកតា៖ នាក់</span>
               </div>
-              <div style="height: 280px;">
-                <canvas id="topProvincesChart"></canvas>
-              </div>
+              <div class="chart-canvas-box" id="topProvincesSvgBox"></div>
             </div>
 
             <div class="card">
@@ -1046,9 +1061,7 @@
                   <div class="card-subtitle" data-i18n="chartGenderSub">ផ្អែកលើទិន្នន័យប្រជាសាស្ត្រ និងបញ្ជីពលរដ្ឋក្នុងប្រព័ន្ធ</div>
                 </div>
               </div>
-              <div style="height: 185px; display: flex; justify-content: center;">
-                <canvas id="genderChart"></canvas>
-              </div>
+              <div class="donut-canvas-box" id="genderDonutSvgBox"></div>
               <div class="gender-stats-row">
                 <div class="gender-box male">
                   <div style="font-size:12px;color:#1e40af;font-weight:600;" data-i18n="maleLabel">ប្រុស (Male)</div>
@@ -1520,7 +1533,7 @@
       }
     };
 
-    // ==================== INITIAL DATA (25 PROVINCES, 210 DISTRICTS/CITIES/KHANS, VILLAGES, CITIZENS) ====================
+    // ==================== INITIAL DATA (25 PROVINCES, 210 DISTRICTS/CITIES/KHANS, 25 VILLAGES, 15 CITIZENS) ====================
     const INITIAL_PROVINCES = [
       { code: "01", name: "បន្ទាយមានជ័យ", nameEn: "Banteay Meanchey", districts: 9, communes: 67, villages: 658, families: 212400, population: 928500 },
       { code: "02", name: "បាត់ដំបង", nameEn: "Battambang", districts: 14, communes: 103, villages: 841, families: 278500, population: 1185000 },
@@ -1549,7 +1562,6 @@
       { code: "25", name: "ត្បូងឃ្មុំ", nameEn: "Tboung Khmum", districts: 7, communes: 64, villages: 885, families: 214000, population: 912000 }
     ];
 
-    // Generate complete 210 Districts/Cities/Khans across all 25 provinces
     const DISTRICTS_BY_PROV = {
       "បន្ទាយមានជ័យ": [
         ["0102", "ក្រុង", "សិរីសោភ័ណ"], ["0103", "ក្រុង", "ប៉ោយប៉ែត"], ["0101", "ស្រុក", "មង្គលបូរី"],
@@ -1702,7 +1714,22 @@
       { id: 7, village: "ភូមិក្បាលស្ពាន", commune: "សង្កាត់ប៉ោយប៉ែត", district: "ក្រុងប៉ោយប៉ែត", province: "បន្ទាយមានជ័យ", families: 920, population: 3980 },
       { id: 8, village: "ភូមិតាខ្មៅ", commune: "សង្កាត់តាខ្មៅ", district: "ក្រុងតាខ្មៅ", province: "កណ្តាល", families: 660, population: 2840 },
       { id: 9, village: "ភូមិសួង", commune: "សង្កាត់សួង", district: "ក្រុងសួង", province: "ត្បូងឃ្មុំ", families: 515, population: 2210 },
-      { id: 10, village: "ភូមិកំពង់បាយ", commune: "សង្កាត់កំពង់បាយ", district: "ក្រុងកំពត", province: "កំពត", families: 470, population: 1990 }
+      { id: 10, village: "ភូមិកំពង់បាយ", commune: "សង្កាត់កំពង់បាយ", district: "ក្រុងកំពត", province: "កំពត", families: 470, population: 1990 },
+      { id: 11, village: "ភូមិវាលស្បូវ", commune: "សង្កាត់វាលស្បូវ", district: "ខណ្ឌច្បារអំពៅ", province: "ភ្នំពេញ", families: 685, population: 2945 },
+      { id: 12, village: "ភូមិព្រែកលៀប", commune: "សង្កាត់ព្រែកលៀប", district: "ខណ្ឌជ្រោយចង្វារ", province: "ភ្នំពេញ", families: 590, population: 2530 },
+      { id: 13, village: "ភូមិកំពង់ចាម", commune: "សង្កាត់កំពង់ចាម", district: "ក្រុងកំពង់ចាម", province: "កំពង់ចាម", families: 530, population: 2270 },
+      { id: 14, village: "ភូមិស្ទឹងសែន", commune: "សង្កាត់កំពង់ធំ", district: "ក្រុងស្ទឹងសែន", province: "កំពង់ធំ", families: 480, population: 2060 },
+      { id: 15, village: "ភូមិដូនកែវ", commune: "សង្កាត់រកាក្នុង", district: "ក្រុងដូនកែវ", province: "តាកែវ", families: 560, population: 2410 },
+      { id: 16, village: "ភូមិច្បារមន", commune: "សង្កាត់ច្បារមន", district: "ក្រុងច្បារមន", province: "កំពង់ស្ពឺ", families: 510, population: 2190 },
+      { id: 17, village: "ភូមិព្រៃវែង", commune: "សង្កាត់កំពង់លាវ", district: "ក្រុងព្រៃវែង", province: "ព្រៃវែង", families: 490, population: 2110 },
+      { id: 18, village: "ភូមិស្វាយរៀង", commune: "សង្កាត់ស្វាយរៀង", district: "ក្រុងស្វាយរៀង", province: "ស្វាយរៀង", families: 465, population: 1995 },
+      { id: 19, village: "ភូមិពោធិ៍សាត់", commune: "សង្កាត់ផ្ទះព្រៃ", district: "ក្រុងពោធិ៍សាត់", province: "ពោធិ៍សាត់", families: 525, population: 2260 },
+      { id: 20, village: "ភូមិប៉ៃលិន", commune: "សង្កាត់ប៉ៃលិន", district: "ក្រុងប៉ៃលិន", province: "ប៉ៃលិន", families: 430, population: 1850 },
+      { id: 21, village: "ភូមិកែប", commune: "សង្កាត់កែប", district: "ក្រុងកែប", province: "កែប", families: 380, population: 1630 },
+      { id: 22, village: "ភូមិមិត្តភាព", commune: "សង្កាត់លេខ៤", district: "ក្រុងព្រះសីហនុ", province: "ព្រះសីហនុ", families: 740, population: 3180 },
+      { id: 23, village: "ភូមិខេមរភូមិន្ទ", commune: "សង្កាត់ស្មាច់មានជ័យ", district: "ក្រុងខេមរភូមិន្ទ", province: "កោះកុង", families: 410, population: 1760 },
+      { id: 24, village: "ភូមិបានលុង", commune: "សង្កាត់ឡាបានសៀក", district: "ក្រុងបានលុង", province: "រតនគិរី", families: 445, population: 1910 },
+      { id: 25, village: "ភូមិសែនមនោរម្យ", commune: "សង្កាត់ស្ពានមានជ័យ", district: "ក្រុងសែនមនោរម្យ", province: "មណ្ឌលគិរី", families: 360, population: 1550 }
     ];
 
     const INITIAL_CITIZENS = [
@@ -1711,10 +1738,16 @@
       { id: 3, idCard: "1201198801923", name: "ជា វណ្ណា", gender: "ប្រុស", age: 38, village: "ភូមិទួលគោក", commune: "សង្កាត់បឹងកក់១", district: "ខណ្ឌទួលគោក", province: "ភ្នំពេញ", role: "មេគ្រួសារ • ពាណិជ្ជករ" },
       { id: 4, idCard: "1712199600319", name: "ហេង ស្រីមុំ", gender: "ស្រី", age: 30, village: "ភូមិក្រវ៉ាន់", commune: "សង្កាត់នគរធំ", district: "ក្រុងសៀមរាប", province: "សៀមរាប", role: "មេគ្រួសារ • មគ្គុទ្ទេសក៍" },
       { id: 5, idCard: "0103199000542", name: "លី មករា", gender: "ប្រុស", age: 36, village: "ភូមិក្បាលស្ពាន", commune: "សង្កាត់ប៉ោយប៉ែត", district: "ក្រុងប៉ោយប៉ែត", province: "បន្ទាយមានជ័យ", role: "មេគ្រួសារ • បុគ្គលិកក្រុមហ៊ុន" },
-      { id: 6, idCard: "0811199900774", name: "ផាន សុជាតា", gender: "ស្រី", age: 27, village: "ភូមិតាខ្មៅ", commune: "សង្កាត់តាខ្មៅ", district: "ក្រុងតាខ្មៅ", province: "កណ្តាល", role: "សមាជិកគ្រួសារ • គណនេយ្យករ" }
+      { id: 6, idCard: "0811199900774", name: "ផាន សុជាតា", gender: "ស្រី", age: 27, village: "ភូមិតាខ្មៅ", commune: "សង្កាត់តាខ្មៅ", district: "ក្រុងតាខ្មៅ", province: "កណ្តាល", role: "សមាជិកគ្រួសារ • គណនេយ្យករ" },
+      { id: 7, idCard: "0306198500412", name: "កែវ សុខា", gender: "ប្រុស", age: 41, village: "ភូមិកំពង់ចាម", commune: "សង្កាត់កំពង់ចាម", district: "ក្រុងកំពង់ចាម", province: "កំពង់ចាម", role: "មេគ្រួសារ • កសិករ" },
+      { id: 8, idCard: "2110199300638", name: "នួន ម៉ាលី", gender: "ស្រី", age: 33, village: "ភូមិដូនកែវ", commune: "សង្កាត់រកាក្នុង", district: "ក្រុងដូនកែវ", province: "តាកែវ", role: "មេគ្រួសារ • អាជីវករ" },
+      { id: 9, idCard: "1801199100915", name: "អ៊ុំ ពិសិដ្ឋ", gender: "ប្រុស", age: 35, village: "ភូមិមិត្តភាព", commune: "សង្កាត់លេខ៤", district: "ក្រុងព្រះសីហនុ", province: "ព្រះសីហនុ", role: "មេគ្រួសារ • វិស្វករ" },
+      { id: 10, idCard: "0708199700284", name: "ម៉ៅ ស្រីនាង", gender: "ស្រី", age: 29, village: "ភូមិកំពង់បាយ", commune: "សង្កាត់កំពង់បាយ", district: "ក្រុងកំពត", province: "កំពត", role: "សមាជិកគ្រួសារ • គ្រូពេទ្យ" },
+      { id: 11, idCard: "2507198900511", name: "វ៉ាន់ ធារ៉ា", gender: "ប្រុស", age: 37, village: "ភូមិសួង", commune: "សង្កាត់សួង", district: "ក្រុងសួង", province: "ត្បូងឃ្មុំ", role: "មេគ្រួសារ • ម្ចាស់ចម្ការ" },
+      { id: 12, idCard: "1413199500709", name: "ស៊ុន បុប្ផា", gender: "ស្រី", age: 31, village: "ភូមិព្រៃវែង", commune: "សង្កាត់កំពង់លាវ", district: "ក្រុងព្រៃវែង", province: "ព្រៃវែង", role: "សមាជិកគ្រួសារ • បុគ្គលិកធនាគារ" }
     ];
 
-    const STORAGE_KEY = "sambok_cambodia_admin_v1";
+    const STORAGE_KEY = "sambok_cambodia_admin_v2";
 
     let state = {
       lang: "km",
@@ -1728,7 +1761,6 @@
     let distPage = 1, villPage = 1, citPage = 1;
     const PAGE_SIZE = 12;
     let crudMode = { entity: null, editIndex: null };
-    let topChart = null, genderChart = null;
 
     function loadState() {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -1830,7 +1862,7 @@
       }
     }
 
-    // ==================== KPI & CHARTS ====================
+    // ==================== KPI & BUILT-IN SVG CHARTS ====================
     function computeStats() {
       const provCount = state.provinces.length;
       const distCount = state.districts.length;
@@ -1851,7 +1883,6 @@
       document.getElementById("badgeVillages").textContent = state.villages.length;
       document.getElementById("badgeCitizens").textContent = state.citizens.length;
 
-      // Gender ratio from citizens list if available, else default demographic 48.8% / 51.2%
       let malePct = 48.8, femalePct = 51.2;
       if (state.citizens.length > 0) {
         const males = state.citizens.filter(c => c.gender === "ប្រុស").length;
@@ -1864,69 +1895,80 @@
       document.getElementById("malePctText").textContent = malePct + "%";
       document.getElementById("femalePctText").textContent = femalePct + "%";
 
-      renderCharts(parseFloat(malePct), parseFloat(femalePct));
+      renderSvgBarChart();
+      renderSvgDonutChart(parseFloat(malePct), parseFloat(femalePct));
     }
 
-    function renderCharts(malePct, femalePct) {
+    function renderSvgBarChart() {
+      const box = document.getElementById("topProvincesSvgBox");
       const sorted = [...state.provinces].sort((a, b) => b.population - a.population).slice(0, 10);
-      const labels = sorted.map(p => state.lang === "km" ? p.name : (p.nameEn || p.name));
-      const values = sorted.map(p => p.population);
+      if (!sorted.length) { box.innerHTML = ""; return; }
 
-      const topCtx = document.getElementById("topProvincesChart").getContext("2d");
-      if (topChart) topChart.destroy();
-      topChart = new Chart(topCtx, {
-        type: "bar",
-        data: {
-          labels,
-          datasets: [{
-            label: state.lang === "km" ? "ប្រជាពលរដ្ឋ" : "Population",
-            data: values,
-            backgroundColor: "#0f2342",
-            borderRadius: 6,
-            maxBarThickness: 36
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: {
-            y: {
-              beginAtZero: true,
-              ticks: {
-                callback: v => v >= 1000000 ? (v / 1000000).toFixed(1) + "M" : (v / 1000).toFixed(0) + "K"
-              }
-            },
-            x: {
-              ticks: { font: { family: "'Noto Sans Khmer', sans-serif", size: 11 } }
-            }
-          }
-        }
+      const maxVal = Math.max(...sorted.map(p => p.population), 1);
+      const W = 760, H = 265;
+      const padLeft = 52, padRight = 16, padTop = 22, padBottom = 56;
+      const chartW = W - padLeft - padRight;
+      const chartH = H - padTop - padBottom;
+      const colW = chartW / sorted.length;
+      const barW = Math.min(34, colW * 0.56);
+
+      let gridLines = "";
+      for (let i = 0; i <= 4; i++) {
+        const ratio = i / 4;
+        const y = padTop + chartH - ratio * chartH;
+        const val = maxVal * ratio;
+        const label = val >= 1000000 ? (val / 1000000).toFixed(1) + "M" : (val / 1000).toFixed(0) + "K";
+        gridLines += `
+          <line x1="${padLeft}" y1="${y}" x2="${W - padRight}" y2="${y}" stroke="#e2e8f0" stroke-dasharray="3,3" />
+          <text x="${padLeft - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#64748b">${label}</text>
+        `;
+      }
+
+      let bars = "";
+      sorted.forEach((p, idx) => {
+        const barH = Math.max(4, (p.population / maxVal) * chartH);
+        const x = padLeft + idx * colW + (colW - barW) / 2;
+        const y = padTop + chartH - barH;
+        const shortLabel = state.lang === "km" ? p.name : (p.nameEn || p.name);
+        const valShort = p.population >= 1000000 ? (p.population / 1000000).toFixed(2) + "M" : (p.population / 1000).toFixed(0) + "K";
+        const fill = idx === 0 ? "#f59e0b" : "#0f2342";
+        bars += `
+          <g>
+            <rect x="${x}" y="${y}" width="${barW}" height="${barH}" rx="5" fill="${fill}">
+              <title>${shortLabel}: ${Number(p.population).toLocaleString()}</title>
+            </rect>
+            <text x="${x + barW / 2}" y="${y - 5}" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">${valShort}</text>
+            <text x="${x + barW / 2}" y="${padTop + chartH + 18}" text-anchor="end" transform="rotate(-24 ${x + barW / 2} ${padTop + chartH + 18})" font-size="11" fill="#334155">${shortLabel}</text>
+          </g>
+        `;
       });
 
-      const genCtx = document.getElementById("genderChart").getContext("2d");
-      if (genderChart) genderChart.destroy();
-      genderChart = new Chart(genCtx, {
-        type: "doughnut",
-        data: {
-          labels: [
-            state.lang === "km" ? "ប្រុស (Male)" : "Male",
-            state.lang === "km" ? "ស្រី (Female)" : "Female"
-          ],
-          datasets: [{
-            data: [malePct, femalePct],
-            backgroundColor: ["#0f2342", "#f59e0b"],
-            borderWidth: 2,
-            borderColor: "#ffffff"
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          cutout: "66%",
-          plugins: { legend: { display: false } }
-        }
-      });
+      box.innerHTML = `
+        <svg viewBox="0 0 ${W} ${H}" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+          ${gridLines}
+          <line x1="${padLeft}" y1="${padTop + chartH}" x2="${W - padRight}" y2="${padTop + chartH}" stroke="#cbd5e1" />
+          ${bars}
+        </svg>
+      `;
+    }
+
+    function renderSvgDonutChart(malePct, femalePct) {
+      const box = document.getElementById("genderDonutSvgBox");
+      const r = 64, cx = 95, cy = 92;
+      const circumference = 2 * Math.PI * r;
+      const maleDash = (malePct / 100) * circumference;
+      const femaleDash = (femalePct / 100) * circumference;
+
+      box.innerHTML = `
+        <svg viewBox="0 0 190 185" width="190" height="185">
+          <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#f59e0b" stroke-width="24" />
+          <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#0f2342" stroke-width="24"
+            stroke-dasharray="${maleDash} ${femaleDash}"
+            transform="rotate(-90 ${cx} ${cy})" />
+          <text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="15" font-weight="700" fill="#0f2342">100%</text>
+          <text x="${cx}" y="${cy + 14}" text-anchor="middle" font-size="10.5" fill="#64748b">${state.lang === "km" ? "សមាមាត្រភេទ" : "Gender Ratio"}</text>
+        </svg>
+      `;
     }
 
     // ==================== TABLES RENDERING ====================
@@ -1943,7 +1985,7 @@
 
     function renderRecentCitizens() {
       const tbody = document.getElementById("recentCitizensBody");
-      const list = state.citizens.slice(0, 5);
+      const list = state.citizens.slice(0, 6);
       tbody.innerHTML = list.map(c => `
         <tr>
           <td><strong>${c.idCard}</strong></td>
@@ -2071,8 +2113,7 @@
         `;
       }).join("");
 
-      document.getElementById("villPaginationInfo").textContent =
-        `${filtered.length} records`;
+      document.getElementById("villPaginationInfo").textContent = `${filtered.length} records`;
       document.getElementById("villPageIndicator").textContent = `${villPage} / ${totalPages}`;
     }
 

@@ -1,9 +1,12 @@
-# សំបុក វេបសាយ (SAMBOK Website) — Cambodia Administrative & Population Data Management System
+# សំបុក វេបសាយ (SAMBOK Website) — Cambodia Administrative & Population Data Management System (v2)
 
-## របៀបបង្ហោះលើ GitHub Pages (How to Deploy to GitHub Pages)
+## អ្វីដែលបានកែលម្អក្នុងកញ្ចប់ v2៖
+- ដាក់រូបភាពប្រាសាទអង្គរវត្តពិត (Angkor Wat Temple) រួមជាមួយស្រមោលកំពូលប្រាសាទទាំង ៥ នៅផ្នែក Banner។
+- ប្តូរក្រាហ្វិក Top 10 ខេត្ត និងក្រាហ្វិកសមាមាត្រភេទ ទៅជា Built-in SVG ដើម្បីឲ្យបង្ហាញច្បាស់ 100% លើ GitHub Pages ដោយមិនពឹងផ្អែកលើបណ្តាញខាងក្រៅ។
+- បំពេញទិន្នន័យគំរូឃុំ-សង្កាត់ ភូមិ (២៥ ភូមិគ្រប់ ២៥ រាជធានី-ខេត្ត) និងបញ្ជីឈ្មោះប្រជាពលរដ្ឋបន្ថែម។
 
-1. ស្រាយកញ្ចប់ឯកសារ (`Extract ZIP`) ទៅកាន់ Folder មួយនៅលើកុំព្យូទ័ររបស់អ្នក។
-2. ចូលទៅកាន់ **GitHub.com** ហើយបង្កើត Repository ថ្មី (ឧទាហរណ៍៖ `sambok-cambodia-admin`) ដោយដាក់ជា **Public**។
-3. Upload ឯកសារ `index.html` (និង Folder `data/` បើចង់ប្រើ) ចូលទៅក្នុង Repository រួចចុច **Commit changes**។
-4. ចូលទៅកាន់ **Settings** ➔ **Pages** ➔ ជ្រើសរើស Branch **`main`** និង Folder **`/ (root)`** រួចចុច **Save**។
-5. រង់ចាំប្រមាណ ១–២ នាទី អ្នកនឹងទទួលបាន Link វេបសាយរបស់អ្នកនៅលើ GitHub Pages។
+## របៀប Update លើ GitHub Pages៖
+1. ស្រាយកញ្ចប់ឯកសារ ZIP (`Extract`) នៅលើកុំព្យូទ័ររបស់អ្នក។
+2. ចូលទៅកាន់ Repository `sambok-cambodia-admin` លើ GitHub.com ➔ ចុច **`Add file`** ➔ **`Upload files`**។
+3. អូសឯកសារ **`index.html`** ថ្មីទម្លាក់ចូល (វានឹងជំនួសឯកសារចាស់ដោយស្វ័យប្រវត្តិ) រួចចុច **`Commit changes`**។
+4. រង់ចាំប្រមាណ ១ នាទី រួចចុច Refresh (`Ctrl + F5`) លើវេបសាយរបស់អ្នក។
